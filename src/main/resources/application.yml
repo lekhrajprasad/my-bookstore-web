@@ -1,0 +1,55 @@
+management:
+    security:
+        enabled: false
+    endpoints:
+        web:
+            exposure:
+                include: '*' #Enabling actuator endpoint
+spring:
+    profiles:
+        active: dev
+    cloud:
+        config:
+            uri: http://192.168.0.105:2345
+    # RabbitMQ Properties
+    rabbitmq:
+        addresses: amqps://xrjbysaw:ESAki5A7fkGit0EMD3q2N6Z7V_KCK69J@fox.rmq.cloudamqp.com/xrjbysaw
+    #boot.admin.client.url: http://localhost:5555 #Boot Admin configuration, Actuator Admin is running on port 8080, either use springboot admin client or eureka client not both
+    application:
+        name: my-bookstore-web
+    
+    main:
+      allow-bean-definition-overriding: false
+
+
+hystrix:
+    command:
+        my-bookprice-ms:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 500000
+        my-booksearch-ms:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 500000
+        my-userrating-ms:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 500000     
+logging:
+    level:
+        root: INFO
+        com.lpras: INFO
+        org.springframework.cloud: INFO
+        com.netflix: INFO
+        de.codecentric: INFO
+    pattern:
+        console: '%-5level [%thread]-${PID} %logger{36}  - %msg%n'
+
+#server.port is design to work with embedded tomcat, hence commenting
+#server:
+#    port: 5000
+#    contextpath: my-bookstore-web
