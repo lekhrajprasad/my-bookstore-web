@@ -32,8 +32,8 @@ pipeline{
             }
         }
         
-    }
-        stage('Building the image') {
+    
+        stage("Building the image") {
             steps {
                 script{
                 sh """
