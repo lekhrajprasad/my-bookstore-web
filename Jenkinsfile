@@ -9,11 +9,14 @@ pipeline{
         string defaultValue: 'DevOps', description: 'Subject ', name: 'SUBJECT'
     }
     stages{
-        stage("working with pac variables"){
+        stage("Git Checkout"){
             steps{
                 echo "========executing A========"
                 script{
-                    println "Hi Team welcome to DevOps!!"
+                    checkout([$class: 'GitSCM', 
+                              branches: [[name: '*/master']], extensions: [], 
+                              userRemoteConfigs: [[credentialsId: '345e9dbb-3f3a-485b-aabe-62176c6d3461', url: 'https://github.com/lekhrajprasad/my-bookstore-web.git']]
+                             ])
                 }
             }
             post{
