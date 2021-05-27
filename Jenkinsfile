@@ -31,6 +31,14 @@ pipeline{
                 }
             }
         }
+        
+    }
+        stage('Building the image') {
+            steps {
+                sh """
+                docker build -t "javawebapplication" .
+                """
+        }
         stage("User define var"){
             steps{
                 echo "========executing A1========"
