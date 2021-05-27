@@ -18,6 +18,7 @@ pipeline{
                 docker build -t "lekhrajprasad/my-bookstore-web:v1" .
                 """
                 }
+            }
         }
     }
 }
