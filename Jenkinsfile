@@ -35,9 +35,11 @@ pipeline{
     }
         stage('Building the image') {
             steps {
+                script{
                 sh """
-                docker build -t "javawebapplication" .
+                docker build -t "lekhrajprasad/my-bookstore-web:v1" .
                 """
+                }
         }
         stage("User define var"){
             steps{
