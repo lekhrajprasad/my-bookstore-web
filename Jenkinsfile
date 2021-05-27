@@ -34,7 +34,7 @@ pipeline{
                 script{
                     def myvar1 = 10
                     println "Hi Executing User define myvar1:: ${myvar1}"
-                    println "My predefined vars are ${currentBuild.result} and ${currentBuild.id}"
+                    println "My predefined vars are ${currentBuild.currentResult} and ${currentBuild.id}"
                     println "My environment variables are ${env.SUBJECT} and ${env.COMPANY}"
                     println "My defined parameters environment ${params.ENV} and provided subject is ${params.SUBJECT}"
                 }
