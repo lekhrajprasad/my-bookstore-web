@@ -31,7 +31,7 @@ pipeline{
                 }
             }
         }
-        
+    }
     
         stage("Building the image") {
             steps {
