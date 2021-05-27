@@ -20,6 +20,15 @@ pipeline{
                 }
             }
         }
+        stage("User define var"){
+            steps{
+                echo "========executing A1========"
+                script{
+                    def myvar1 = 10
+                    println "Hi Executing User define myvar1:: ${myvar1}"
+                }
+            }
+        }
     }
     post{
         always{
