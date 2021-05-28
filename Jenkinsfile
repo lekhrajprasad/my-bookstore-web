@@ -13,29 +13,6 @@ pipeline {
       }
     }
 
-    stage('Compile Stage') {
-      steps {
-        withMaven{
-          sh 'mvn clean compile'
-        }
-      }
-    }
-
-    stage('Testing Stage') {
-      steps {
-        withMaven{
-          sh 'mvn test'
-        }
-      }
-    }
-    stage('Install Stage') {
-      steps {
-        withMaven{
-          sh 'mvn install'
-        }
-      }
-    }
-
     stage("Building the image") {
       steps {
         script {
