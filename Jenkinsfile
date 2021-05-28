@@ -15,23 +15,23 @@ pipeline {
 
     stage('Compile Stage') {
       steps {
-        withMaven(maven: 'apache-maven-3.8.1') {
-          bat 'mvn clean compile'
+        withMaven{
+          sh 'mvn clean compile'
         }
       }
     }
 
     stage('Testing Stage') {
       steps {
-        withMaven(maven: 'apache-maven-3.8.1') {
-          bat 'mvn test'
+        withMaven{
+          sh 'mvn test'
         }
       }
     }
     stage('Install Stage') {
       steps {
-        withMaven(maven: 'apache-maven-3.8.1') {
-          bat 'mvn install'
+        withMaven{
+          sh 'mvn install'
         }
       }
     }
