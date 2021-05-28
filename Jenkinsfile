@@ -17,7 +17,7 @@ pipeline {
       steps {
         script {
           sh """
-          docker build - t "lekhrajprasad/my-bookstore-web:v1" .
+          docker build - t "lekhrajprasad/my-bookstore-web:v1".
           """
         }
       }
