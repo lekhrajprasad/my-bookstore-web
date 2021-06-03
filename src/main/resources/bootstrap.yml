@@ -1,9 +1,11 @@
+server:
+    port: 5000
 spring:
     profiles:
         active: dev
     cloud:
         config:
-            uri: http://192.168.0.105:2345
+            uri: http://localhost:8888
     application:
         name: my-bookstore-web
 #server.port is design to work with embedded tomcat, hence commenting
